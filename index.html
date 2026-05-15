@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vano</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Vano</h1>
+    <p class="subtitle">🍿Vano'nun film & dizi bulma sayfası🍿</p>
+  </header>
+
+  <main class="container">
+    <section class="search-panel" aria-labelledby="search-heading">
+      <h2 id="search-heading" class="visually-hidden">Film Arama</h2>
+      <div class="controls">
+        <input id="search-input" type="search" placeholder="Örn: The Matrix" aria-label="Film adı" />
+        <button id="search-btn">Ara</button>
+      </div>
+
+      <div class="filters">
+        <label>
+          Tür:
+          <select id="type-filter" aria-label="Tür filtre">
+            <option value="">Tümü</option>
+            <option value="movie">Film</option>
+            <option value="series">Dizi</option>
+            <option value="episode">Bölüm</option>
+          </select>
+        </label>
+
+        <label>
+          Yıl:
+          <input id="year-filter" type="number" inputmode="numeric" min="1888" max="2100" placeholder="Tümü" />
+        </label>
+
+        <label class="sort-label">
+          Sırala:
+          <select id="sort-filter">
+            <option value="relevance">-</option>
+            <option value="year-desc">Yıl (En yeni ilk)</option>
+            <option value="year-asc">Yıl (En eski ilk)</option>
+            <option value="rating-desc">IMDB Puanı (En yüksek ilk)</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="last-search" id="last-search" hidden>
+        En son bunu arattınız: <button id="last-search-btn" class="link-btn"></button>
+      </div>
+    </section>
+
+    <section class="results-panel" aria-live="polite">
+      <div id="message" class="message" hidden></div>
+      <div id="results" class="results-grid"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>Selam, ben Vano! İyi seyirler dilerim! </small>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
